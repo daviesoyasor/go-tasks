@@ -1,19 +1,16 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"github.com/daviesoyasor/go-tasks/pkg/middleware"
 	"github.com/daviesoyasor/go-tasks/pkg/configs"
-	
+	"github.com/daviesoyasor/go-tasks/pkg/middleware"
+
 	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
-	// Define Fiber config.
-	config := configs.FiberConfig()
-
 	// Define a new Fiber app with config.
-	app := fiber.New(config)
+	// Function is used to create and configure a new instance of the fiber.App struct 
+	app := configs.InitializeNewFiberInstance()
 
 	// Fiber Middlewares (APPLICATION LEVEL MIDDLEWARE)
 	middleware.FiberMiddleware(app)

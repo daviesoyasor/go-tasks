@@ -19,3 +19,14 @@ func FiberConfig() fiber.Config {
 		ReadTimeout: time.Second * time.Duration(readTimeoutSecondsCount),
 	}
 }
+
+// Initialize Fiber instance
+func InitializeNewFiberInstance() *fiber.App {
+	// Define Fiber config.
+	config := FiberConfig()
+
+	// Define a new Fiber app with config.
+	app := fiber.New(config)
+
+	return app
+}

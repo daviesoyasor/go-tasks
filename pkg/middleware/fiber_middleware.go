@@ -23,5 +23,7 @@ func FiberMiddleware(a *fiber.App) {
 			Expiration: 10 * time.Second,
 			Max:        3,
 		}),
+
+		NotFoundRoute,
 	)
 }
